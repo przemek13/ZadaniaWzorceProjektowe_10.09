@@ -3,6 +3,7 @@ package ZadaniaWzorceProjektowe_10_09;
 import ZadaniaWzorceProjektowe_10_09.Zadanie1.*;
 import ZadaniaWzorceProjektowe_10_09.Zadanie2.*;
 import ZadaniaWzorceProjektowe_10_09.Zadanie3.*;
+import ZadaniaWzorceProjektowe_10_09.Zadanie4.*;
 
 public class App {
     public static void main(String[] args) {
@@ -64,5 +65,19 @@ public class App {
         manager2.addChild(developer5);
         manager2.addChild(developer6);
         topManager.showMe();
+
+        System.out.println("________________________________________________________________");
+
+        //Zadanie4
+        System.out.println();
+        WithdrawRequest withdrawRequest = new WithdrawRequest(750);
+        TwoHundred twoHundred = new TwoHundred();
+        OneHundred oneHundred = new OneHundred();
+        Fifty fifty = new Fifty();
+        Twenty twenty = new Twenty();
+        twoHundred.setSuccessor(oneHundred);
+        oneHundred.setSuccessor(fifty);
+        fifty.setSuccessor(twenty);
+        twoHundred.processRequest(withdrawRequest);
     }
 }
