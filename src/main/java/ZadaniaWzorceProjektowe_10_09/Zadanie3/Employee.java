@@ -1,8 +1,8 @@
 package ZadaniaWzorceProjektowe_10_09.Zadanie3;
 
 public abstract class Employee {
-    protected String name;
-    protected int salary;
+    protected final String name;
+    protected final int salary;
 
     public Employee(String name, int salary) {
         this.name = name;

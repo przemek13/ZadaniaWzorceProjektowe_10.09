@@ -14,20 +14,23 @@ public abstract class WithdrawPower {
         this.successor = successor;
     }
 
+    public void print (WithdrawRequest request, int integer) {
+        request.setAmount(request.getAmount() - integer);
+        System.out.println("You will receive " + integer + " PLN in " + this.getRole());
+        successor.processRequest(request);
+    }
+
     public void processRequest(WithdrawRequest request) {
         if (request.getAmount() <= this.getAllowable()) {
             if (request.getAmount() / getDenomination() == 0) {
                 System.out.println("You will receive " + request.getAmount() + " PLN in " + this.getRole());
             } else {
                 int integer = (request.getAmount() - ((request.getAmount() % getDenomination())));
-                System.out.println("You will receive " + integer + " PLN in " + this.getRole());
-                request.setAmount(request.getAmount() - integer);
-                successor.processRequest(request);
+                print(request, integer);
             }
         } else if ((successor != null)) {
-            request.setAmount(request.getAmount() - getAllowable());
-            System.out.println("You will receive " + getAllowable() + " PLN in " + this.getRole());
-            successor.processRequest(request);
+            int integer = getAllowable();
+            print(request, integer);
         }
     }
 }

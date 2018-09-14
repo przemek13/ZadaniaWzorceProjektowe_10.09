@@ -3,10 +3,10 @@ package ZadaniaWzorceProjektowe_10_09.Zadanie3;
 import java.util.ArrayList;
 
 public class CompositeEmployee extends Employee {
-    private ArrayList<Employee> employees = new ArrayList<Employee>();
+    private final ArrayList<Employee> employees = new ArrayList<Employee>();
 
     public CompositeEmployee(String name, int salary) {
-        super(name,salary);
+        super(name, salary);
     }
 
     @Override

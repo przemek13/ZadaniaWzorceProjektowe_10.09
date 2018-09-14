@@ -1,8 +1,12 @@
 package ZadaniaWzorceProjektowe_10_09;
 
-import ZadaniaWzorceProjektowe_10_09.Zadanie1.*;
+import ZadaniaWzorceProjektowe_10_09.Zadanie1.BaseCollection;
+import ZadaniaWzorceProjektowe_10_09.Zadanie1.Iterator;
+import ZadaniaWzorceProjektowe_10_09.Zadanie1.Pokemon;
+import ZadaniaWzorceProjektowe_10_09.Zadanie1.PokemonsCollection;
 import ZadaniaWzorceProjektowe_10_09.Zadanie2.*;
-import ZadaniaWzorceProjektowe_10_09.Zadanie3.*;
+import ZadaniaWzorceProjektowe_10_09.Zadanie3.CompositeEmployee;
+import ZadaniaWzorceProjektowe_10_09.Zadanie3.Employee;
 import ZadaniaWzorceProjektowe_10_09.Zadanie4.*;
 
 public class App {
@@ -31,9 +35,9 @@ public class App {
         // Zadanie2
         System.out.println();
         Car car = new BasicCar();
-        Car blackColourCar = new ColouredBodyCar(car, "black");
+        Car blackColourCar = new ColouredBodyCar(car, Colours.BLACK);
         Car carWithSpoiler = new CarWithSpoiler(car);
-        Car fullStackCar = new CarWithSpoiler(new ColouredBodyCar(new ChangedWheelsCar(car, 19), "blue"));
+        Car fullStackCar = new CarWithSpoiler(new ColouredBodyCar(new ChangedWheelsCar(car, WheelsDimensions.NINETEEN), Colours.BLUE));
         System.out.println("___________basic___________");
         car.assembleCar();
         System.out.println("___________black___________");
@@ -71,13 +75,13 @@ public class App {
         //Zadanie4
         System.out.println();
         WithdrawRequest withdrawRequest = new WithdrawRequest(750);
-        TwoHundred twoHundred = new TwoHundred();
-        OneHundred oneHundred = new OneHundred();
-        Fifty fifty = new Fifty();
-        Twenty twenty = new Twenty();
-        twoHundred.setSuccessor(oneHundred);
-        oneHundred.setSuccessor(fifty);
-        fifty.setSuccessor(twenty);
-        twoHundred.processRequest(withdrawRequest);
+        TwoHundredWithdrawPower twoHundredWithdrawPower = new TwoHundredWithdrawPower();
+        OneHundredWithdrawPower oneHundredWithdrawPower = new OneHundredWithdrawPower();
+        FiftyWithdrawPower fiftyWithdrawPower = new FiftyWithdrawPower();
+        TwentyWithdrawPower twentyWithdrawPower = new TwentyWithdrawPower();
+        twoHundredWithdrawPower.setSuccessor(oneHundredWithdrawPower);
+        oneHundredWithdrawPower.setSuccessor(fiftyWithdrawPower);
+        fiftyWithdrawPower.setSuccessor(twentyWithdrawPower);
+        twoHundredWithdrawPower.processRequest(withdrawRequest);
     }
 }

@@ -1,9 +1,9 @@
 package ZadaniaWzorceProjektowe_10_09.Zadanie2;
 
 public class ColouredBodyCar extends CarDecorator {
-    String bodyColour;
+    Colours bodyColour;
 
-    public ColouredBodyCar(Car car, String bodyColour) {
+    public ColouredBodyCar(Car car, Colours bodyColour) {
         super(car);
         this.bodyColour = bodyColour;
     }
@@ -11,6 +11,6 @@ public class ColouredBodyCar extends CarDecorator {
     @Override
     public void assembleCar() {
         super.assembleCar();
-        System.out.println("You're car has " + bodyColour + " colour.");
+        System.out.println("You're car has " + bodyColour.getColour() + " colour.");
     }
 }

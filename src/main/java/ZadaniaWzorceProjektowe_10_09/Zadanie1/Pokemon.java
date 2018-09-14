@@ -3,6 +3,7 @@ package ZadaniaWzorceProjektowe_10_09.Zadanie1;
 public class Pokemon extends BaseModel {
     private String name;
     private int creationYear;
+
     public Pokemon(String ordinalNumber, String name, int creationYear) {
         super(ordinalNumber);
         this.name = name;

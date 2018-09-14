@@ -2,9 +2,9 @@ package ZadaniaWzorceProjektowe_10_09.Zadanie2;
 
 public class ChangedWheelsCar extends CarDecorator {
 
-    int wheelsDimensions;
+    WheelsDimensions wheelsDimensions;
 
-    public ChangedWheelsCar(Car car, int wheelsDimensions) {
+    public ChangedWheelsCar(Car car, WheelsDimensions wheelsDimensions) {
         super(car);
         this.wheelsDimensions = wheelsDimensions;
     }
@@ -12,7 +12,7 @@ public class ChangedWheelsCar extends CarDecorator {
     @Override
     public void assembleCar() {
         super.assembleCar();
-        System.out.println("You're car has " + wheelsDimensions + " inch wheels.");
+        System.out.println("You're car has " + wheelsDimensions.getNumVal() + " inch wheels.");
     }
 
 }
